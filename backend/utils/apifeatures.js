@@ -36,14 +36,14 @@ class ApiFeatures {
         return this
     }
     async pagination(resultPerPage){
-        // console.log(resultPerPage);
+        
         const currentPage = Number(this.querystr.page || 1) 
-        // console.log(currentPage);
+        
 
         const skip = resultPerPage * (currentPage -1)
-        // console.log(skip);
+    
         this.query = this.query.limit(resultPerPage).skip(skip)
-        // console.log(this.query);
+
 
         return this
     }
