@@ -49,7 +49,7 @@ const Products = () => {
         dispatch(getProduct(keyword,currentPage,price,category,ratings))
     },[dispatch,keyword,currentPage,price,category,ratings,error,alert])
 
-    let count = filteredProductsCount
+    // let count = filteredProductsCount
   return (
     <Fragment>
         {
@@ -100,8 +100,6 @@ const Products = () => {
               />
             </fieldset>
             </div>
-
-          {resultPerPage < count && (
             <div className="paginationBox">
               <Pagination
                 activePage={currentPage}
@@ -118,7 +116,6 @@ const Products = () => {
                 activeLinkClass="pageLinkActive"
               />
             </div>
-          )}
             </Fragment>)
         }
     </Fragment>

@@ -1,6 +1,6 @@
-import React, {Fragment } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 
 
@@ -17,7 +17,6 @@ const ProtectedRoute = ({ isAdmin, children }) => {
               } 
              return  children
         }     
-
 }
 
 export default ProtectedRoute;

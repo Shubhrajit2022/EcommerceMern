@@ -2,7 +2,7 @@ class ApiFeatures {
     constructor(query,querystr){
         this.query =query
         this.querystr = querystr
-    }
+        }
 
     search(){
         const keyword = this.querystr.keyword ? {
@@ -35,12 +35,15 @@ class ApiFeatures {
         // console.log(querystr);
         return this
     }
-    pagination(resultPerPage){
+    async pagination(resultPerPage){
+        // console.log(resultPerPage);
         const currentPage = Number(this.querystr.page || 1) 
+        // console.log(currentPage);
 
         const skip = resultPerPage * (currentPage -1)
-
+        // console.log(skip);
         this.query = this.query.limit(resultPerPage).skip(skip)
+        // console.log(this.query);
 
         return this
     }
